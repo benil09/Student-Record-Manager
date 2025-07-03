@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
 const router = express.Router();
-const db = require("../db");
+import db from "../db.js";
 
 router.get("/", (req, res) => {
   db.query("SELECT * FROM Students", (err, results) => {
@@ -18,4 +18,4 @@ router.post("/add", (req, res) => {
   });
 });
 
-module.exports = router;// Export the router
+export default router // Export the router
